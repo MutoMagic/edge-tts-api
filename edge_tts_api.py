@@ -57,7 +57,7 @@ class SynthesisError(RuntimeError):
 
 
 def clean_text_logic(text):
-    # /tts 的弹幕读音和停顿处理。
+    # 弹幕读音和停顿处理。
     if not text:
         return ""
     text = text.replace("弹幕", "旦幕").replace("彈幕", "旦幕")
@@ -240,15 +240,15 @@ def create_speech():
     return Response(audio, mimetype="audio/mpeg")
 
 
-@app.route("/tts", methods=["GET", "POST"])
-@app.route("/tts/", methods=["GET", "POST"])
-@app.route("/tts/<path:path_text>", methods=["GET", "POST"])
+@app.route("/danmaku/tts", methods=["GET", "POST"])
+@app.route("/danmaku/tts/", methods=["GET", "POST"])
+@app.route("/danmaku/tts/<path:path_text>", methods=["GET", "POST"])
 def tts_proxy(path_text=None):
     text = path_text or request.args.get("text")
     if not text:
         body = request.data.decode("utf-8")
         if body:
-            app.logger.info("/tts 请求正文=%r", body)
+            app.logger.info("/danmaku/tts 请求正文=%r", body)
         text = body.strip()
     text = clean_text_logic(unquote_plus(text))
     if not text or text == "$TTSTEXT":
