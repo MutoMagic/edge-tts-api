@@ -5,8 +5,8 @@ import pytest
 from edge_tts.typing import TTSChunk
 from flask.testing import FlaskClient
 
-import speech_synthesis
 from app import app
+from speech import speech_synthesis
 
 
 @pytest.fixture
