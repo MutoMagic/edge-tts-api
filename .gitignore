@@ -1,2 +1,9 @@
+# python
 __pycache__
+.pytest_cache/
+.venv/
+
+# ide
 .vscode/
+
+/docs/research/

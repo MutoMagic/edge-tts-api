@@ -4,8 +4,8 @@ from typing import cast
 from flask import Flask
 from flask.json.provider import DefaultJSONProvider
 
-from danmaku_api import danmaku_api
-from openai_compat import openai_compat
+from speech.routes.danmaku_api import danmaku_api
+from speech.routes.openai_compat import openai_compat
 
 app = Flask(__name__)
 cast(DefaultJSONProvider, app.json).ensure_ascii = False

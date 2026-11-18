@@ -3,7 +3,7 @@ import re
 from flask import Blueprint, Response, request
 from flask.typing import ResponseReturnValue
 
-from speech_synthesis import InvalidVoice, SynthesisError, synthesize
+from speech.speech_synthesis import InvalidVoice, SynthesisError, synthesize
 
 danmaku_api = Blueprint("danmaku_api", __name__, url_prefix="/danmaku")
 

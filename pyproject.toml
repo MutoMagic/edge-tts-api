@@ -1,0 +1,13 @@
+[project]
+name = "edge-tts-api"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+    "edge-tts>=7.3.1",
+    "flask>=3.1.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.2.0",
+]

@@ -3,7 +3,7 @@ import re
 from flask import Blueprint, Response, current_app, jsonify, request
 from flask.typing import ResponseReturnValue
 
-from speech_synthesis import InvalidVoice, SynthesisError, synthesize
+from speech.speech_synthesis import InvalidVoice, SynthesisError, synthesize
 
 openai_compat = Blueprint("openai_compat", __name__, url_prefix="/v1")
 
